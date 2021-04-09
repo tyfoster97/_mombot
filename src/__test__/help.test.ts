@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { help, h_roll } from '../commands/help';
+import * as h from '../commands/help';
 const BOT_PREFIX = process.env.BOT_PREFIX;
 /**
  * @file help.test.ts
@@ -10,11 +10,16 @@ const BOT_PREFIX = process.env.BOT_PREFIX;
  */
 
 test('help', () => {
-  const msg = help();
+  const msg = h.help();
   expect(msg.title).toEqual('Commands');
 });
 
+test('h_flip', () => {
+  const msg = h.h_flip();
+  expect(msg.title).toEqual(`${BOT_PREFIX}flipcoin`);
+});
+
 test('h_roll', () => {
-  const msg = h_roll();
+  const msg = h.h_roll();
   expect(msg.title).toEqual(`${BOT_PREFIX}roll <num-sides>`);
 })
