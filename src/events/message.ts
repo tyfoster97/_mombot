@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { Client, Message } from 'discord.js';
 /**
  * @file message.ts
@@ -16,10 +17,10 @@ import { Client, Message } from 'discord.js';
 module.exports = (client: Client, message: Message) => {
   if (message.author.bot) return; // ignore bot messages
 
-  if (message.content.startsWith(process.env.PREFIX)) { // if the message starts with the command PREFIX
+  if (message.content.startsWith(process.env.BOT_PREFIX)) { // if the message starts with the command PREFIX
     let args = message.content
-      .substr(message.content.indexOf(process.env.PREFIX) + 1) // strip PREFIX from string
-      .split(/[\s+\,+\-+]/); // token ize input
+      .substr(message.content.indexOf(process.env.BOT_PREFIX) + 1) // strip PREFIX from string
+      .split(/[\s+\,+]/); // token ize input
     const cmd = args.shift().toLowerCase(); // pop front of stack to get command
     console.log(cmd, args);
 

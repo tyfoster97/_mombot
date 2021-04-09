@@ -1,10 +1,9 @@
+import { roll } from '../commands/roll';
 /**
  * 
  */
 
-import { roll } from '../commands/roll';
-
-describe('Invalid arguments', () => {
+describe('roll() - Invalid arguments', () => {
   test('Less than 0', () => {
     expect(roll(-1)).toBe(0);
   });
@@ -14,8 +13,8 @@ describe('Invalid arguments', () => {
   });
 });
 
-describe('Valid arguments', () => {
+describe('roll() - Valid arguments', () => {
   test('1', () => {
     expect(roll(1)).toBe(1);
   });
-})
+});

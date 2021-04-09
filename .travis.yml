@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - node
+jobs:
+  fast finish: true
+env:
+  global:
+    - BOT_PREFIX=!
+    - COLOR=#3499DC
+    - NODE_ENV=dev # redundant
+
+before_install:
+  - npm install -g npm # get latest npm version
+# default test ok, will call build script
