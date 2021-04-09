@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { TextChannel, Client, Message, MessageEmbed } from "discord.js";
 /**
  * @file log.ts

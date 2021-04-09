@@ -4,12 +4,11 @@ node_js:
 jobs:
   fast finish: true
 env:
-  - PREFIX=!
-  - COLOR=#3499DC
-  - NODE_ENV=dev # redundant
+  global:
+    - BOT_PREFIX=!
+    - COLOR=#3499DC
+    - NODE_ENV=dev # redundant
 
 before_install:
   - npm install -g npm # get latest npm version
-before_script:
-  - npm run build
-# default test ok
+# default test ok, will call build script
