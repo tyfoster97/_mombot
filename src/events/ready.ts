@@ -1,6 +1,5 @@
 import { Client } from 'discord.js';
 import { infoLog } from '../utils/logs';
-
 /**
  * @file message.ts
  * @author Ty Foster
