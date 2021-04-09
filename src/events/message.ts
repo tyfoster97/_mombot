@@ -28,4 +28,4 @@ module.exports = (client: Client, message: Message) => {
       client['commands'].get(cmd).run(client, message, args);
     }
   }
-}
+};

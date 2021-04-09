@@ -19,8 +19,12 @@ const {
  * @param message a Discord Message sent by a User
  * @param args an array of string arguments from the Message
  */
+/* istanbul ignore next */
 export async function run(client: Client, message: Message, args: string[]) {
   switch(args[0]) {
+    case 'flipcoin':
+      message.channel.send(h_flip());
+      break;
     case 'roll':
       message.channel.send(h_roll());
       break;
@@ -30,6 +34,9 @@ export async function run(client: Client, message: Message, args: string[]) {
   }
 }
 
+/**
+ * @returns MessageEmbed with list of all commands
+ */
 export function help(): MessageEmbed {
   return new MessageEmbed()
     .setColor(COLOR)
@@ -37,10 +44,27 @@ export function help(): MessageEmbed {
     .setDescription(`Complete list of mombot commands\nuse ${BOT_PREFIX}help <command-name> for command specific information`)
     .addFields(
       { name: 'Example', value: `${BOT_PREFIX}help roll` },
-      { name: 'roll', value: 'roll a many-sided die'}
+      { name: 'flipcoin', value: 'flips a fair coin' },
+      { name: 'roll', value: 'roll a many-sided die' }
     );
 }
 
+/**
+ * @returns MessageEmbed for !flipcoin help
+ */
+export function h_flip(): MessageEmbed {
+  return new MessageEmbed()
+    .setColor(COLOR)
+    .setTitle(`${BOT_PREFIX}flipcoin`)
+    .setDescription('flips a fair coin')
+    .addFields (
+      { name: 'Example', value: `${BOT_PREFIX}flipcoin`}
+    );
+}
+
+/**
+ * @returns MessageEmbed for !roll help
+ */
 export function h_roll(): MessageEmbed {
   return new MessageEmbed()
     .setColor(COLOR)
