@@ -7,7 +7,7 @@
     "build": "tsc",
     "start": "NODE_ENV=prod node dist/Bot.js",
     "devstart": "tsc && NODE_ENV=dev nodemon dist/Bot.hs",
-    "test": "tsc && NODE_ENV=dev jest --coverage"
+    "test": "tsc && NODE_ENV=dev jest --coverage --detectOpenHandles"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "dotenv": "^8.2.0"
   },
   "jest": {
-    "rootDir": "dist"
+    "rootDir": "dist",
+    "testEnvironment": "node"
   }
 }
