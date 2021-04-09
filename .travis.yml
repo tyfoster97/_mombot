@@ -8,6 +8,9 @@ env:
     - BOT_PREFIX=!
     - COLOR=#3499DC
     - NODE_ENV=dev # redundant
+branches:
+  exclude:
+   - readme
 
 before_install:
   - npm install -g npm # get latest npm version
