@@ -16,3 +16,13 @@ Bot for discord servers that provides some admin functions and some fun mom func
 - Daily CI test build of main branch
 - CI test build of each push to the repo and pull requests
 - Kaban board for tracking development progress
+
+### Permanent Branches
+**main**
+> most recent stable version of code
+
+**dev**
+> current stage of development, may not be stable
+
+**readme**
+> exists specifically for editing README document
