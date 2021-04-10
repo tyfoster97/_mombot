@@ -11,11 +11,16 @@ import { registerCommands, registerEvents } from './utils/setup';
 
 const client = new Client();
 
-if (process.env.NODE_ENV === 'prod') { // run production bot separately
-  client.login(process.env.BOT_TOKEN);
-} else { // run tests with separate bot
-  client.login(process.env.DEV_TOKEN);
+let token;
+switch(process.env.NODE_ENV) {
+  case 'prod':
+    token = process.env.BOT_TOKEN;
+    break;
+  default:
+    token = process.env.DEV_TOKEN;
+    break;
 }
+client.login(token);
 
 (async function setup() {
     await registerCommands(client);
