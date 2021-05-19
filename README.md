@@ -1,6 +1,12 @@
 # _mombot
 Bot for discord servers that provides some admin functions and some fun mom functions
 
+## Demonstrates
+- TypeScript
+- Test-Driven Development (TDD)
+- Travis CI
+- Text UI application
+
 ## Bot Commands
 - **!help**: lists all commands
 - **!flipcoin**: flips a coin
